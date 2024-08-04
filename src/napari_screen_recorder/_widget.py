@@ -45,7 +45,7 @@ class ScreenRecorder:
         self.canvas_only = canvas_only
 
 class RecordingWidget(QWidget):
-    def __init__(self, viewer):
+    def __init__(self, viewer: 'napari.viewer.Viewer', parent=None):
         super().__init__()
         self.viewer = viewer
         self.recorder = ScreenRecorder(viewer)
