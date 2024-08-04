@@ -34,6 +34,27 @@ To install latest development version :
     pip install git+https://github.com/kephale/napari-screen-recorder.git
 
 
+## Usage
+
+```
+import napari
+from napari_screen_recorder import add_recording_widget
+
+# Your custom code to initialize and manipulate the viewer
+viewer = napari.Viewer()
+
+# Add the recording widget to the viewer
+recording_widget = add_recording_widget(viewer)
+
+# Programmatically start recording
+recording_widget.recorder.set_file_path('output.mp4')
+recording_widget.recorder.set_canvas_only(True)
+recording_widget.recorder.start_recording(duration=10, continuous=False)
+
+# Start the Napari event loop
+napari.run()
+```
+
 ## Contributing
 
 Contributions are very welcome. Tests can be run with [tox], please ensure

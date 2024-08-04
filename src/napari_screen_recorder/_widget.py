@@ -108,10 +108,14 @@ class RecordingWidget(QWidget):
     def update_canvas_only(self, state):
         self.recorder.set_canvas_only(self.canvas_only_checkbox.isChecked())
 
-def main():
-    viewer = napari.Viewer()
+def add_recording_widget(viewer):
     widget = RecordingWidget(viewer)
     viewer.window.add_dock_widget(widget, area='right')
+    return widget
+
+def main():
+    viewer = napari.Viewer()
+    add_recording_widget(viewer)
     napari.run()
 
 if __name__ == "__main__":
