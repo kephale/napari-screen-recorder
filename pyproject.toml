@@ -28,7 +28,8 @@ dependencies = [
     "numpy",
     "magicgui",
     "qtpy",
-    "scikit-image",
+    "mss",
+    "imageio[ffmpeg]",
 ]
 
 [project.optional-dependencies]
